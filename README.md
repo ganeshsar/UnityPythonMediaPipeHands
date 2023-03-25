@@ -11,3 +11,4 @@ Testing hand tracking inside of Unity using Google MediaPipe Hands Python framew
 
 # Tips
 * You can set the DEBUG flag True in hands.py to visualize what is being seen and how your hands are being interpreted.
+* Improve the accuracy of the model by setting MODEL_COMPLEXITY to 1 inside hands.py
