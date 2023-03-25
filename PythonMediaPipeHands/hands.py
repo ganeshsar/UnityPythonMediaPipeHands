@@ -6,6 +6,7 @@ import threading
 import time
 
 DEBUG = False # significantly reduces performance
+MODEL_COMPLEXITY = 0 # set to 1 to improve accuracy at the cost of performance
 
 # the capture thread captures images from the WebCam on a separate thread (for performance)
 class CaptureThread(threading.Thread):
@@ -41,7 +42,7 @@ class HandThread(threading.Thread):
         capture.start()
 
         # Based Heavily on: https://github.com/nicknochnack/MediaPipeHandPose/blob/main/Handpose%20Tutorial.ipynb
-        with mp_hands.Hands(min_detection_confidence=0.75, min_tracking_confidence=0.5, model_complexity = 0) as hands: 
+        with mp_hands.Hands(min_detection_confidence=0.75, min_tracking_confidence=0.5, model_complexity = MODEL_COMPLEXITY) as hands: 
             while capture.isRunning==False:
                 print("Waiting for capture")
                 time.sleep(500/1000)
