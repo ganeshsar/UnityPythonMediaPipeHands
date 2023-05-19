@@ -1,5 +1,6 @@
 # Multithreaded Unity Python MediaPipe Hands
 Testing hand tracking inside of Unity using Google MediaPipe Hands Python framework. Webcam readings, piping, and MediaPipe Hands all run on a different thread.
+![](https://i.imgur.com/YCnpuB4.gif)
 
 # Instructions
 1. Requires Python, Unity Hub, a WebCam, and decently fast CPU.
