@@ -7,12 +7,14 @@ thread = HandThread()
 thread.start()
 
 # Piping method based heavily on: https://gist.github.com/JonathonReinhart/bbfa618f9ad19e2ca48d5fd10914b069
+
+# MUST RUN UNITY PROJECT FIRST!
 f = open(r'\\.\pipe\UnityMediaPipeHands', 'r+b', 0)
 
 while True:
     
     if thread.dirty:
-        s = thread.data.encode('ascii')
+        s = thread.data.encode('utf-8')
         
         f.write(struct.pack('I', len(s)) + s)   
         f.seek(0)                          

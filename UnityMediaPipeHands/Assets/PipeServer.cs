@@ -122,6 +122,8 @@ public class PipeServer : MonoBehaviour
 
     private void Start()
     {
+        System.Globalization.CultureInfo.DefaultThreadCurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+
         left = new Hand(lParent,landmarkPrefab,linePrefab);
         right = new Hand(rParent, landmarkPrefab,linePrefab);
 
@@ -156,6 +158,8 @@ public class PipeServer : MonoBehaviour
 
     void Run()
     {
+        System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+
         // Piping Method based heavily off of: https://gist.github.com/JonathonReinhart/bbfa618f9ad19e2ca48d5fd10914b069
         // Open the named pipe.
         server = new NamedPipeServerStream("UnityMediaPipeHands");
@@ -164,7 +168,7 @@ public class PipeServer : MonoBehaviour
         server.WaitForConnection();
 
         print("Connected.");
-        var br = new BinaryReader(server);
+        var br = new BinaryReader(server, Encoding.UTF8);
 
         while (true)
         {
