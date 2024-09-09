@@ -1,4 +1,6 @@
 # Multithreaded Unity Python MediaPipe Hands
+NOTICE: this project has been replaced by [Tracking4All](https://ko-fi.com/s/709e6d6f6f) which is actively supported and features much better quality, is cross-platform with embedded Unity support and more!
+
 Testing hand tracking inside of Unity using Google MediaPipe Hands Python framework. Webcam readings, piping, and MediaPipe Hands all run on a different thread.
 ![](https://i.imgur.com/YCnpuB4.gif)
 
